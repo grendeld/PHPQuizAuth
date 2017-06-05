@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth; //added
 
 class LoginController extends Controller
 {
@@ -49,6 +50,6 @@ class LoginController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('admins');
+        return Auth::guard('admins'); //add \ before Auth if not using 'Auth' after namespace
     }
 }
